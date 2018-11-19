@@ -1,0 +1,68 @@
+<!-- not working -->
+<mat-sidenav-container>
+  <mat-sidenav opened="true" mode="side">
+    {{ r.isActive }}
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="r.isActive"
+        routerLinkActive="active"
+        #r="routerLinkActive">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            demo
+          </mat-panel-title>
+          <mat-panel-description>
+            demo
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <a [routerLink]="[ '/products' ]" routerLinkActive="active" >products</a>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <div style="height: 1000px">
+    some content
+  </div>
+</mat-sidenav-container>
+
+<!-- working if no use sidenav -->
+<!-- {{ r.isActive }}
+<mat-accordion>
+  <mat-expansion-panel [expanded]="r.isActive"
+    routerLinkActive="active"
+    #r="routerLinkActive">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        demo {{ r.isActive }}
+      </mat-panel-title>
+      <mat-panel-description>
+        demo
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <a [routerLink]="[ '/products' ]" routerLinkActive="active" >products</a>
+  </mat-expansion-panel>
+</mat-accordion> -->
+
+
+<!-- working if expanded direct set to true -->
+<!-- <mat-sidenav-container>
+  <mat-sidenav opened="true" mode="side">
+    {{ r.isActive }}
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true"
+        routerLinkActive="active"
+        #r="routerLinkActive">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            demo
+          </mat-panel-title>
+          <mat-panel-description>
+            demo
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <a [routerLink]="[ '/products' ]" routerLinkActive="active" >products</a>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <div style="height: 1000px">
+    some content
+  </div>
+</mat-sidenav-container>  -->
